@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+<head>
+  <title> Give me food :3 </title>
+  <style>
+    body {
+      text-align: center;
+      background: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/a61b4850831491.58dac60498251.gif");
+      background-size: cover;
+      background-position: center;
+      color: Navy  ;
+      font-family: Comic Sans MS;
+    }
+    p {
+      font-size: 40px;
+    }
+    input {
+      border: 10;
+      padding: 15px;
+      font-size: 20px;
+    }
+    input[type="submit"] {
+      font-family: 'Macondo', cursive;
+      background: gray;
+      color: pink;
+    }
+    img{
+      width:350px;
+      border-radius: 100px;
+    }
+      
+  </style>
+</head>
+
+<body>
+  <img src="https://media.tenor.com/ujMrE0ot-6gAAAAC/pusheen-asking-for-food.gif">
+  <p>Hi! I'm very hungry, Plz give me food</p>
+	<input id="Name" placeholder=" your name">
+  <input id="Email" placeholder="My food">
+  <input id="submit" type="submit">
+	<script type="module">
+	  // Import the functions you need from the SDKs you need
+	  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+		import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+	  
+	  // TODO: Add SDKs for Firebase products that you want to use
+	  // https://firebase.google.com/docs/web/setup#available-libraries
+
+	  // Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  const firebaseConfig = {
+	    apiKey: "AIzaSyDOnc-lth5-BKPfBf8RBxawgVCmlw3gPrM",
+	    authDomain: "give-food-plz.firebaseapp.com",
+	    databaseURL: "https://give-food-plz-default-rtdb.firebaseio.com",
+	    projectId: "give-food-plz",
+	    storageBucket: "give-food-plz.appspot.com",
+	    messagingSenderId: "627156668580",
+	    appId: "1:627156668580:web:413431d117b26de457d631",
+	    measurementId: "G-4MKR8DB64N"
+	  };
+
+	  // Initialize Firebase
+	  const app = initializeApp(firebaseConfig);
+		const db = getDatabase(app);
+	
+const Name = document.querySelector("#Name") 
+const Email = document.querySelector("#Email")
+document.querySelector('#submit').addEventListener('click', Submit)
+	
+		function Submit() {
+			  const timestamp = buildTimestamp()
+	  
+			  set(ref(db, timestamp), {
+				  Name: Name.value,
+			      email: Email.value,
+			  });
+
+			  Name.value = ""
+			  Email.value = ""
+			}
+			function buildTimestamp() {
+				  const now = new Date();
+				  let timestamp = now.getFullYear().toString() + "/";
+				  //const month = now.toLocaleString('default', { month: 'long' });
+
+				  let month = now.getMonth()+1   //add 1 because Javascript uses 0 for January
+				  month = month.toString()
+				  month = addLeadingZero(month)
+				  timestamp += month + "/"; 
+
+				  let date = now.getDate().toString()
+				  date = addLeadingZero(date)
+				  timestamp += date + "/";
+
+				  let hours = now.getHours().toString()
+				  hours = addLeadingZero(hours)
+				  timestamp += hours + ":";
+
+				  let minutes = now.getMinutes().toString()
+				  minutes = addLeadingZero(minutes)
+				  timestamp += minutes + ":";
+
+				  let seconds = now.getSeconds().toString()
+				  seconds = addLeadingZero(seconds)
+				  timestamp += seconds;
+  
+				  return timestamp
+				}
+	
+				function addLeadingZero(units) {
+					if (units.length < 2) {
+						units = "0" + units
+					}
+					return units
+				}
+			
+	
+	
+	  
+	</script>
+</body>
