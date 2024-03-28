@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<head>
+<title> food "restaurant"</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background:linear-gradient(90deg, hsla(39, 100%, 50%, 1) 20%, hsla(52, 100%, 50%, 1) 50%, hsla(39, 100%, 50%, 1) 80%);
+
+}
+div {
+  height: 200px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+
+  font-family:  'Bungee Spice', sans-serif;
+  text-align: center;
+  font-size: 75px;
+  color: purple;
+  margin: 60px 0 0 0;
+}
+h2 {
+  font-family: 'Caveat', cursive;
+  text-align: center;
+  color: #8B0000;
+  margin: 0px 0 70px 0;
+}
+p {
+  font-family: 'Indie Flower', cursive;
+  color: pink;
+  background: black;
+  background: linear-gradient(bottom, rgba(103, 49, 71,1), rgba(160,32,240,.4));
+  background: -webkit-linear-gradient(bottom, rgba(103, 49, 71,1), rgba(160,32,240,.4));
+  background: -moz-linear-gradient(bottom, rgba(103, 49, 711), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url("https://media.tenor.com/tKXgRzX-VlsAAAAC/ramen-noodles.gif");
+}
+.second{
+  background-image: url("https://38.media.tumblr.com/6761eee4853ae491aa8ed68460873d1c/tumblr_mly0900P4a1rip3xvo1_400.gif");
+}
+.dessert{
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/019/280/678/original/square-bear-drinks-sheet.gif?1562781624");
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  } 
+  small {
+    font-size: 16px;
+  }
+}
+input {
+	font-size: 22px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+<h1>Give me food "restaurant"</h1>
+<h2>I don't give food here, You do ^-^</h2>
+<div class="first">
+	 <input type="number" min="0" style="width: 50px"  class="quantities">
+  <p>main courses <span class="price">$40</span><br />
+  <small>I will give you some money so that you can buy me some food. Some rellly good ramen that I want to try are miso ramen,Shio Ramen,Shoyu Ramen, and Tonkotsu Ramen. You can also get me rice ( fried, jellof,white,brown) a chiken sandwhich,pasta, hamburger,ect. You have to spead 90%-95% of the money i give you.If not you have to pay me dubble i gave you. You can use the rest to buy something for yourself </small></p>
+</div>
+
+<div class="second">
+	 <input type="number" min="0" style="width: 50px"  class="quantities">
+  <p>sides  <span class="price">$25</span><br />
+  <small>There are a lot of sides you can. some sides that you can give e are fried chiken,fries,chiken nuggets,ect. You cane aslo give me dessserts like cupcakes,cake,muffins,chololate,cookies,ect. You have to sped\ad 90%-95% of the money I give you.If not you have to pay me dubble i gave you. You can use the rest to buy something for yourself </small></p>
+</div>
+  
+<div class="dessert">
+	 <input type="number" min="0" style="width: 50px" class="quantities">
+  <p>beverages<span class="price">$15</span><br />
+  <small>There are a lot if beverages you can give me like soda. some sodas you can give me me are coke-a-cola-pepsi,fanta,gerale ect.you can also give me juic liek, apple,orange,strawbreary and kiwi,mango,ect.or you can just guve me some plan old water.You have to spead 90%-95% of the money I give you.If not you have to pay me dubble i gave you. You can use the rest to buy something for yourself </small></p>
+</div>
+<br><br>
+ <input id="Name" placeholder=" your name">
+   <input id="Email" placeholder="My food">
+   <input id="submit" type="submit">
+<br><br>
+
+
+<script>
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+	
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCfNxlJGxGn4Z8yLIdyR5UHvAo3S3vruzE",
+    authDomain: "food--restaurant-a5d23.firebaseapp.com",
+    databaseURL: "https://food--restaurant-a5d23-default-rtdb.firebaseio.com",
+    projectId: "food--restaurant-a5d23",
+    storageBucket: "food--restaurant-a5d23.appspot.com",
+    messagingSenderId: "177187739585",
+    appId: "1:177187739585:web:3d5b07f6d896e50df98140",
+    measurementId: "G-064BN2L08T"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+   const db = getDatabase(app);
+const Name = document.querySelector("#Name") 
+const Email = document.querySelector("#Email")
+document.querySelector('#submit').addEventListener('click', Submit)
+	
+		function Submit() {
+			  const timestamp = buildTimestamp()
+			let total = 0
+		  let cart = { }
+		  for  (let i=0; i<quantities.length; i=i+1) {
+		  	if (quantities[i].value != "0" && quantities[i].value != "") {	
+			  let price = prices[i].innerHTML.replace('$', '')
+			  total = total + quantities[i].value * price 
+		  		cart[itemsList[i]] = parseInt(quantities[i].value) 
+		  	}
+		  	quantities[i].value = ""
+		  }
+			  
+	  
+			  set(ref(db, timestamp), {
+				  Name: Name.value,
+			      email: Email.value,
+					cart: cart, 
+					totalPrice: total,
+		 		 	paid: "not yet",
+			  });
+
+			  Name.value = ""
+			  Email.value = ""
+			}
+			function buildTimestamp() {
+				  const now = new Date();
+				  let timestamp = now.getFullYear().toString() + "/";
+				  //const month = now.toLocaleString('default', { month: 'long' });
+
+				  let month = now.getMonth()+1   //add 1 because Javascript uses 0 for January
+				  month = month.toString()
+				  month = addLeadingZero(month)
+				  timestamp += month + "/"; 
+
+				  let date = now.getDate().toString()
+				  date = addLeadingZero(date)
+				  timestamp += date + "/";
+
+				  let hours = now.getHours().toString()
+				  hours = addLeadingZero(hours)
+				  timestamp += hours + ":";
+
+				  let minutes = now.getMinutes().toString()
+				  minutes = addLeadingZero(minutes)
+				  timestamp += minutes + ":";
+
+				  let seconds = now.getSeconds().toString()
+				  seconds = addLeadingZero(seconds)
+				  timestamp += seconds;
+  
+				  return timestamp
+				}
+	
+				function addLeadingZero(units) {
+					if (units.length < 2) {
+						units = "0" + units
+					}
+					return units
+				}
+const quantities = document.querySelectorAll(".quantities") 
+const itemsList = ["main coures", "sides", "beverages"]
+const prices = document.querySelectorAll(".price") 
+
+				
+</script>
+</body>
